@@ -1,0 +1,32 @@
+% 基础宏包
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{styles/mybook}[2024/06/20 Custom Thesis Package]
+
+% 字体配置（中文支持）
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\setsansfont{Arial}
+\setmonofont{Courier New}
+\usepackage{xeCJK}
+\setCJKmainfont{SimSun}
+
+% 数学宏包
+\usepackage{amsmath, amssymb, amsthm}
+
+% 图表宏包
+\usepackage{graphicx, caption, subcaption}
+\usepackage{booktabs} 
+
+% 代码环境
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily, breaklines=true}
+
+% 超链接
+\usepackage[hidelinks]{hyperref}
+
+% 自定义环境（从 cfg 加载）
+\input{styles/myenv.cfg}
+
+% 其他配置
+\usepackage[margin=2.5cm]{geometry}
+\linespread{1.3}

@@ -1,0 +1,28 @@
+% 使用 xelatex 引擎
+% !TEX program = xelatex
+
+\documentclass[a4paper, 12pt]{book}
+
+% 加载统一样式
+\usepackage{styles/mybook}
+
+% 文档元信息
+\title{毕业设计概念笔记}
+\author{Your Name}
+\date{\today}
+
+\begin{document}
+\tableofcontents
+\frontmatter
+\input{frontmatter/abstract.tex}
+\input{frontmatter/acknowledgments.tex}
+
+\mainmatter
+\input{chapters/chapter01.tex}
+\input{chapters/chapter02.tex}
+
+\backmatter
+\input{backmatter/appendix.tex}
+\bibliography{backmatter/references}
+
+\end{document}
