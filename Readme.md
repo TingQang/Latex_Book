@@ -111,23 +111,42 @@ latex
 json
 {
   "latex-workshop.latex.autoBuild.run": "onFileChange",
-  "latex-workshop.latex.root": "main.tex",
+  "latex-workshop.latex.recipe.default": "lastUsed",
   "latex-workshop.latex.tools": [
-    {
-      "name": "latexmk",
-      "command": "latexmk",
-      "args": [
-        "-xelatex",
-        "-output-directory=output",
-        "-aux-directory=output/aux_files",
-        "-g",
-        "-synctex=1",
-        "-interaction=nonstopmode",
-        "%DOC%"
-      ]
-    }
+      {
+          "name": "latexmk",
+          "command": "latexmk",
+          "args": [
+              "-xelatex",
+              "-output-directory=output",
+              "-aux-directory=output/aux_files",
+              "-g",
+              "-synctex=1",
+              "-interaction=nonstopmode",
+              "-file-line-error",
+              "%DOC%"
+          ]
+      },
+      {
+          "name": "bibtex",
+          "command": "bibtex",
+          "args": [
+              "%DOCFILE%"
+          ]
+      }
+  ],
+  "latex-workshop.latex.recipes": [
+      {
+          "name": "latexmk with bibtex",
+          "tools": [
+              "latexmk",
+              "bibtex",
+              "latexmk",
+              "latexmk"
+          ]
+      }
   ]
-}
+}    
 🚀 使用流程
 环境准备
 安装 VS Code 插件：
