@@ -1,6 +1,6 @@
-# LaTeX 毕业设计项目架构说明
+# LaTeX 概念总结项目架构说明
 ## 📂 项目目录结构
-myproject/
+myconceptbook/
 │
 ├── .vscode/ # VS Code 配置
 │ └── settings.json
