@@ -1,27 +1,38 @@
 {
   "latex-workshop.latex.autoBuild.run": "onFileChange",
   "latex-workshop.latex.recipe.default": "lastUsed",
-  "latex-workshop.latex.root": "main.tex",
   "latex-workshop.latex.tools": [
-    {
-      "name": "latexmk",
-      "command": "latexmk",
-      "args": [
-        "-xelatex",
-        "-output-directory=output",
-        "-aux-directory=output/aux_files",
-        "-g",
-        "-synctex=1",
-        "-interaction=nonstopmode",
-        "-file-line-error",
-        "%DOC%"
-      ]
-    }
+      {
+          "name": "latexmk",
+          "command": "latexmk",
+          "args": [
+              "-xelatex",
+              "-output-directory=output",
+              "-aux-directory=output/aux_files",
+              "-g",
+              "-synctex=1",
+              "-interaction=nonstopmode",
+              "-file-line-error",
+              "%DOC%"
+          ]
+      },
+      {
+          "name": "bibtex",
+          "command": "bibtex",
+          "args": [
+              "%DOCFILE%"
+          ]
+      }
   ],
   "latex-workshop.latex.recipes": [
-    {
-      "name": "latexmk",
-      "tools": ["latexmk"]
-    }
+      {
+          "name": "latexmk with bibtex",
+          "tools": [
+              "latexmk",
+              "bibtex",
+              "latexmk",
+              "latexmk"
+          ]
+      }
   ]
-}
+}    

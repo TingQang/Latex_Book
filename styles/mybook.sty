@@ -1,32 +1,83 @@
-% 基础宏包
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{styles/mybook}[2024/06/20 Custom Thesis Package]
+\ProvidesPackage{styles/mybook}[2024/06/20 毕业论文样式宏包]
 
-% 字体配置（中文支持）
-\usepackage{fontspec}
-\setmainfont{Times New Roman}
-\setsansfont{Arial}
-\setmonofont{Courier New}
-\usepackage{xeCJK}
-\setCJKmainfont{SimSun}
+% ======================
+% 基础依赖宏包
+% ======================
+\RequirePackage{xcolor}      % 颜色控制
+\RequirePackage{caption}    % 图表标题定制
+\RequirePackage{zhnumber}    % 中文数字转换
+\RequirePackage{enumitem}    % 列表项控制
+\RequirePackage{titlesec}    % 章节标题定制
 
-% 数学宏包
-\usepackage{amsmath, amssymb, amsthm}
+% ======================
+% 自定义 section 标题格式，使其居中
+% ======================
+\titleformat{\section}
+  {\normalfont\Large\bfseries\centering}
+  {}
+  {0em}
+  {}
 
-% 图表宏包
-\usepackage{graphicx, caption, subcaption}
-\usepackage{booktabs} 
+% ======================
+% 去除图片标题前缀
+% ======================
+\captionsetup[figure]{labelformat=empty}
 
-% 代码环境
-\usepackage{listings}
-\lstset{basicstyle=\ttfamily, breaklines=true}
+% ======================
+% 字体系统配置
+% ======================
+\RequirePackage{fontspec}
+\setmainfont{Times New Roman}       % 英文主字体
+\setsansfont{Arial}                 % 无衬线字体  
+\setmonofont{Courier New}           % 等宽字体
 
-% 超链接
-\usepackage[hidelinks]{hyperref}
+\RequirePackage{xeCJK}              % 中日韩文字支持
+\setCJKmainfont[                    % 中文主字体配置
+  AutoFakeSlant = 0.25,            % 伪斜体参数
+  BoldFont = SimHei                % 粗体替代字体
+]{SimSun}
+\setCJKsansfont{SimHei}             % 中文无衬线体
+\setCJKmonofont{FangSong}           % 中文等宽字体
 
-% 自定义环境（从 cfg 加载）
-\input{styles/myenv.cfg}
+% ======================
+% 数学环境配置
+% ======================
 
-% 其他配置
-\usepackage[margin=2.5cm]{geometry}
-\linespread{1.3}
+\RequirePackage{amssymb}            % 数学符号库
+\RequirePackage{amsthm}             % 定理证明环境
+\RequirePackage{amsmath}           % 数学公式扩展
+\RequirePackage{bm}%加粗希腊字母
+% ======================
+% 图表系统配置
+% ======================
+\RequirePackage{graphicx}           % 图形插入支持
+\RequirePackage{subcaption}         % 子图表标题
+\RequirePackage{booktabs}           % 专业表格样式
+\RequirePackage{tikz}               %绘图
+
+% ======================
+% 代码环境配置
+% ======================
+\RequirePackage{listings}
+\lstset{
+  basicstyle = \ttfamily,          % 等宽基本字体
+  breaklines = true                 % 自动断行
+}
+
+% ======================
+% 页面布局配置
+% ======================
+\RequirePackage[margin=2.5cm]{geometry}  % 页边距设置
+\linespread{1.3}                        % 1.3倍行距
+
+% ======================
+% 自定义试卷环境
+% ======================
+\input{styles/myenv.cfg}          % 题目/解答/环境/插图/三线表定义
+
+% ======================
+% 超链接配置
+% ======================
+\RequirePackage[hidelinks]{hyperref}   % 隐藏链接边框    
+\endinput

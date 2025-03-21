@@ -1,28 +1,32 @@
-% 使用 xelatex 引擎
-% !TEX program = xelatex
+    % 使用 xelatex 引擎
+    % !TEX program = xelatex
 
-\documentclass[a4paper, 12pt]{book}
+    \documentclass[a4paper, 12pt]{book}
+    \usepackage{styles/mybook}
 
-% 加载统一样式
-\usepackage{styles/mybook}
 
-% 文档元信息
-\title{毕业设计概念笔记}
-\author{Your Name}
-\date{\today}
+    \setlength{\abovedisplayskip}{20pt}  % 公式上方间距
+    \setlength{\belowdisplayskip}{20pt}  % 公式下方间距
+    % 文档元信息
+    \title{毕业设计概念笔记}
+    \author{Sky}
+    \date{\today}
 
-\begin{document}
-\tableofcontents
-\frontmatter
-\input{frontmatter/abstract.tex}
-\input{frontmatter/acknowledgments.tex}
+    \bibliographystyle{plain}  % 可选样式：plain, abbrv, unsrt, alpha, etc.
+    \begin{document}
+    \tableofcontents
+    \addtocontents{toc}{\setcounter{tocdepth}{1}} % 仅当前目录生效
+    \frontmatter
+    \input{frontmatter/abstract.tex}
+    \input{frontmatter/acknowledgments.tex}
+    我\cite{einstein1905}
 
-\mainmatter
-\input{chapters/chapter01.tex}
-\input{chapters/chapter02.tex}
+    \mainmatter
+    \input{chapters/chapter01.tex}
+    \input{chapters/chapter02.tex}
 
-\backmatter
-\input{backmatter/appendix.tex}
-\bibliography{backmatter/references}
+    \backmatter
+    \input{backmatter/appendix.tex}
+    \bibliography{references.bib}
 
-\end{document}
+    \end{document}

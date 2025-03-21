@@ -1,0 +1,5 @@
+PWD F:/Users/Peter Zhang/Documents/Latex Files/math-papers
+INPUT d:/Program Files/texlive/2024/texmf.cnf
+INPUT d:/Program Files/texlive/2024/texmf-dist/web2c/texmf.cnf
+INPUT d:/Program Files/texlive/2024/texmf-var/web2c/xetex/xelatex.fmt
+INPUT f:/Users/Peter Zhang/Documents/Latex Files/math-papers/main.tex
